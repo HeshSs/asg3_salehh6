@@ -11,6 +11,9 @@
 \usepackage{listings}
 \usepackage{fullpage}
 \usepackage{fancyvrb}
+\usepackage{graphicx}
+
+\graphicspath{ {./images/} }
 
 
 \renewcommand{\labelenumii}{\theenumii.}
@@ -71,12 +74,23 @@
 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 
 \end{verbatim}
 		\end{enumerate}
-	\item \todo{answer is in Ipad}
-	\item \todo{answer is in Ipad}
+
+\newpage
+
+	\item $~$\\
+\includegraphics[scale=0.75]{Q2}
+
+\newpage
+
+	\item $~$\\
+\includegraphics[scale=0.75]{Q3}
 	\item Consider by contradiction that the edge of maximum weight in the cycle C, edge e, belongs to the MST of the graph.
 Since MSTs do not contain cycles there is at least one edge in C that is not in the MST. Let's call one of these edges f.
 Now add f to the MST. There is now a cycle in the MST. Since e has the maximum weight in the cycle C and all edge weights are distinct, it means that weight(f) < weight(e). 
 Removing the edge e after having added the edge f would generate a new MST' with total weight less than the total weight in MST, contradicting its minimality.
+
+\newpage
+
 	\item 
 		\begin{enumerate}
 			\item
@@ -113,6 +127,28 @@ It's strongest component is 0 2 3 5 6 10.
 	\item Topological order: \\
 p $-$ n $-$ o $-$ s $-$ m $-$ r $-$ u $-$ y $-$ v $-$ w $-$ z $-$ q $-$ t $-$ x 
 
+\newpage
+
+	\item Suppose there are two minimum trees, A and B. Let e be the edge in just one of A,B with the smallest cost. 
+Suppose it is in A but not B. Suppose e is the edge PQ. Then B must contain a path from P to Q which is not simply the edge e. 
+So if we add e to B, then we get a cycle. If all the other edges in the cycle were in A, then A would contain a cycle, which it cannot. 
+So the cycle must contain an edge f not in A. Hence, by the definition of e (and the fact that all edge-costs are different) the cost of f must be greater than the cost of e. 
+So if we replace f by e we get a spanning tree with smaller total cost. Contradiction.
+	\item 
+	\begin{enumerate}
+		\item Minimum spanning tree with Greedy Algorithm: \\
+\includegraphics[scale=0.75]{Q9a}
+
+\newpage
+
+		\item Minimum spanning tree with Kruskal’s Algorithm: \\
+\includegraphics[scale=0.75]{Q9b}
+
+\newpage
+
+		\item Minimum spanning tree with Prim’s Algorithm: \\
+\includegraphics[scale=0.75]{Q9c}
+	\end{enumerate}
 \end{enumerate}
 
 \end{document}
