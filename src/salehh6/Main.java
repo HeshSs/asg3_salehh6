@@ -1,11 +1,11 @@
 package salehh6;
 
-import edu.princeton.cs.algs4.Digraph;
-import edu.princeton.cs.algs4.Edge;
-import edu.princeton.cs.algs4.EdgeWeightedGraph;
+import edu.princeton.cs.algs4.AcyclicSP;
+import edu.princeton.cs.algs4.BellmanFordSP;
+import edu.princeton.cs.algs4.DijkstraSP;
+import edu.princeton.cs.algs4.DirectedEdge;
+import edu.princeton.cs.algs4.EdgeWeightedDigraph;
 import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.KruskalMST;
-import edu.princeton.cs.algs4.PrimMST;
 import edu.princeton.cs.algs4.StdOut;
 
 public class Main {
@@ -24,14 +24,24 @@ public class Main {
 //		In file = new In("Q6.txt");
 //		Digraph G = new Digraph(file);
 
-		In in = new In("Q9.txt");
-		EdgeWeightedGraph G = new EdgeWeightedGraph(in);
-		PrimMST mst = new PrimMST(G);
-		for (Edge e : mst.edges()) {
-			StdOut.println(e);
+		In in = new In("Q13.txt");
+		int s = Integer.parseInt("0");
+		EdgeWeightedDigraph G = new EdgeWeightedDigraph(in);
+
+		// find shortest path from s to each other vertex in DAG
+		AcyclicSP sp = new AcyclicSP(G, s);
+
+		for (int v = 0; v < G.V(); v++) {
+			if (sp.hasPathTo(v)) {
+				StdOut.printf("%d to %d (%.2f)  ", s, v, sp.distTo(v));
+				for (DirectedEdge e : sp.pathTo(v)) {
+					StdOut.print(e + "   ");
+				}
+				StdOut.println();
+			} else {
+				StdOut.printf("%d to %d         no path\n", s, v);
+			}
 		}
-		StdOut.printf("%.5f\n", mst.weight());
 
 	}
-
 }

@@ -149,6 +149,55 @@ So if we replace f by e we get a spanning tree with smaller total cost. Contradi
 		\item Minimum spanning tree with Prim’s Algorithm: \\
 \includegraphics[scale=0.75]{Q9c}
 	\end{enumerate}
+	\item
+a to a (0.00)  \\
+a to b (2.00)  a$\rightarrow$b  2.00   \\
+a to c (6.00)  a$\rightarrow$j  4.00   j$\rightarrow$c  2.00   \\
+a to d (6.00)  a$\rightarrow$b  2.00   b$\rightarrow$f  3.00   f$\rightarrow$d  1.00   \\
+a to e (8.00)  a$\rightarrow$l  5.00   l$\rightarrow$e  3.00   \\
+a to f (5.00)  a$\rightarrow$b  2.00   b$\rightarrow$f  3.00   \\
+a to h (5.00)  a$\rightarrow$h  5.00   \\
+a to i (5.00)  a$\rightarrow$j  4.00   j$\rightarrow$i  1.00   \\
+a to j (4.00)  a$\rightarrow$j  4.00   \\
+a to k (7.00)  a$\rightarrow$b  2.00   b$\rightarrow$f  3.00   f$\rightarrow$d  1.00   d$\rightarrow$k  1.00   \\
+a to l (5.00)  a$\rightarrow$l  5.00
+
+	\item
+s to s ( 0.00)  \\
+s to t ( 2.00)  s$\rightarrow$y  7.00   y$\rightarrow$x -3.00   x$\rightarrow$t -2.00   \\
+s to x ( 4.00)  s$\rightarrow$y  7.00   y$\rightarrow$x -3.00   \\
+s to y ( 7.00)  s$\rightarrow$y  7.00   \\
+s to z (-2.00)  s$\rightarrow$y  7.00   y$\rightarrow$x -3.00   x$\rightarrow$t -2.00   t$\rightarrow$z -4.00   \\
+
+	\item 
+\begin{Verbatim}
+public double diameter(EdgeWeightedDigraph edgeWeightedDigraph) {
+	double diameter = Double.NEGATIVE_INFINITY;
+
+	for (int v = 0; v < edgeWeightedDigraph.V(); v++) {
+		DijkstraSP dijkstraSP = new DijkstraSP(edgeWeightedDigraph, v);
+
+		for (int v2 = 0; v2 < edgeWeightedDigraph.V(); v2++) {
+			if (dijkstraSP.distTo(v2) > diameter) {
+				diameter = dijkstraSP.distTo(v2);
+			}
+		}
+	}
+
+	return diameter;
+}
+\end{Verbatim}
+
+	\item
+r to r (0.00)  
+r to s (5.00)  r->s  5.00   
+r to t (3.00)  r->t  3.00   
+r to x (10.00)  r->t  3.00   t->x  7.00   
+r to y (7.00)  r->t  3.00   t->y  4.00   
+r to z (5.00)  r->t  3.00   t->z  2.00
+
+	\item
+
 \end{enumerate}
 
 \end{document}
