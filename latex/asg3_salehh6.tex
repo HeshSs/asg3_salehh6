@@ -10,11 +10,15 @@
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
 \usepackage{fullpage}
+\usepackage{fancyvrb}
+
 
 \renewcommand{\labelenumii}{\theenumii.}
 
 \newcommand{\mname}[1]{\mbox{\sf #1}}
 \newcommand{\pnote}[1]{{\langle \text{#1} \rangle}}
+\newcommand\todo[1]{\textcolor{red}{[TODO: #1]}}
+
 
 \begin{document}
 
@@ -51,6 +55,7 @@
 10: 5 $\rightarrow$ 3 \\
 11: 8 $\rightarrow$ 7 $\rightarrow$ 1
 			\item Adjacency Matrix:
+
 \begin{verbatim}
 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 
 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 
@@ -66,6 +71,45 @@
 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 
 \end{verbatim}
 		\end{enumerate}
+	\item \todo{answer is in Ipad}
+	\item \todo{answer is in Ipad}
+	\item Consider by contradiction that the edge of maximum weight in the cycle C, edge e, belongs to the MST of the graph.
+Since MSTs do not contain cycles there is at least one edge in C that is not in the MST. Let's call one of these edges f.
+Now add f to the MST. There is now a cycle in the MST. Since e has the maximum weight in the cycle C and all edge weights are distinct, it means that weight(f) < weight(e). 
+Removing the edge e after having added the edge f would generate a new MST' with total weight less than the total weight in MST, contradicting its minimality.
+	\item 
+		\begin{enumerate}
+			\item
+0: 6 $\rightarrow$ 5 \\
+1: \\
+2: 0 $\rightarrow$ 3 \\
+3: 10 $\rightarrow$ 6 \\
+4: 1 \\
+5: 10 $\rightarrow$ 2 \\
+6: 2 \\
+7: 8 $\rightarrow$ 11 \\
+8: 1 $\rightarrow$ 4 \\
+9: \\
+10: 3 \\
+11: 8
+			\item Adjacency Matrix:
+\begin{verbatim}
+0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 
+0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 
+0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 
+0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+\end{verbatim}
+		\end{enumerate}
+	\item \todo{Show steps}
+It's strongest component is 0 2 3 5 6 10.
 \end{enumerate}
 
 \end{document}
