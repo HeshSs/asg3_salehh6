@@ -6,6 +6,7 @@ import edu.princeton.cs.algs4.DijkstraSP;
 import edu.princeton.cs.algs4.DirectedEdge;
 import edu.princeton.cs.algs4.EdgeWeightedDigraph;
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.KMP;
 import edu.princeton.cs.algs4.StdOut;
 
 public class Main {
@@ -24,24 +25,7 @@ public class Main {
 //		In file = new In("Q6.txt");
 //		Digraph G = new Digraph(file);
 
-		In in = new In("Q13.txt");
-		int s = Integer.parseInt("0");
-		EdgeWeightedDigraph G = new EdgeWeightedDigraph(in);
 
-		// find shortest path from s to each other vertex in DAG
-		AcyclicSP sp = new AcyclicSP(G, s);
-
-		for (int v = 0; v < G.V(); v++) {
-			if (sp.hasPathTo(v)) {
-				StdOut.printf("%d to %d (%.2f)  ", s, v, sp.distTo(v));
-				for (DirectedEdge e : sp.pathTo(v)) {
-					StdOut.print(e + "   ");
-				}
-				StdOut.println();
-			} else {
-				StdOut.printf("%d to %d         no path\n", s, v);
-			}
-		}
 
 	}
 }
