@@ -91,9 +91,9 @@
 
 %Q4
 	\item Consider by contradiction that the edge of maximum weight in the cycle C, edge e, belongs to the MST of the graph.
-Since MSTs do not contain cycles there is at least one edge in C that is not in the MST. Let's call one of these edges f.
-Now add f to the MST. There is now a cycle in the MST. Since e has the maximum weight in the cycle C and all edge weights are distinct, it means that weight(f) < weight(e). 
-Removing the edge e after having added the edge f would generate a new MST' with total weight less than the total weight in MST, contradicting its minimality.
+Since MST does not contain any cycles, there is at least one edge in C that is not in the MST. Let's call one of these edges g.
+Now add g to the MST. There is now a cycle in the MST. Since e has the maximum weight in the cycle C and all edge weights are distinct, it means that weight(g) $<$ weight(e). 
+Removing the edge e after having added the edge g would generate a new MST prime with total weight, less than the total weight in MST, therfore contradicting its minimality.
 
 \newpage
 
@@ -131,8 +131,17 @@ Removing the edge e after having added the edge f would generate a new MST' with
 		\end{enumerate}
 
 %Q6
-	\item \todo{Show steps pg. 589}
-It's strongest component is 0 2 3 5 6 10.
+	\item Edges: \\
+0 $\rightarrow$ 6, 5 \\
+2 $\rightarrow$ 0, 3 \\
+3 $\rightarrow$ 10, 6 \\
+5 $\rightarrow$ 10, 2 \\
+6 $\rightarrow$ 2 \\
+10 $\rightarrow$ 3 \\
+
+0 $\rightarrow$ 5 $\rightarrow$ 2 $\rightarrow$ 3 $\rightarrow$ 10 $\rightarrow$ 3 $\rightarrow$ 6 $\rightarrow$ 2 $\rightarrow$ 0
+
+Therefore, It's strongest component is 0 2 3 5 6 10.
 
 %Q7
 	\item Topological order: \\
@@ -141,11 +150,11 @@ p $-$ n $-$ o $-$ s $-$ m $-$ r $-$ u $-$ y $-$ v $-$ w $-$ z $-$ q $-$ t $-$ x
 \newpage
 
 %Q8
-	\item Suppose there are two minimum trees, A and B. Let e be the edge in just one of A,B with the smallest cost. 
-Suppose it is in A but not B. Suppose e is the edge PQ. Then B must contain a path from P to Q which is not simply the edge e. 
-So if we add e to B, then we get a cycle. If all the other edges in the cycle were in A, then A would contain a cycle, which it cannot. 
-So the cycle must contain an edge f not in A. Hence, by the definition of e (and the fact that all edge-costs are different) the cost of f must be greater than the cost of e. 
-So if we replace f by e we get a spanning tree with smaller total cost. Contradiction.
+	\item Suppose by contradiction there are two minimum trees, E and F. Let e be the edge in just one of E,F with the smallest cost. 
+Suppose it is in E but not F. Suppose e is the edge MN. Then F must contain a path from M to n which is not simply the edge e. 
+So if we add e to F, then we get a cycle. If all the other edges in the cycle were in E, then E would contain a cycle, which it cannot. 
+So the cycle must contain an edge f not in E. Hence, by the definition of e (and the fact that all edge-costs are different) the cost of f must be greater than the cost of e. 
+So if we replace f by e we get a spanning tree with smaller total cost, which derives a contradiction.
 
 %Q9
 	\item 
@@ -208,12 +217,12 @@ public double diameter(EdgeWeightedDigraph edgeWeightedDigraph) {
 
 %Q13
 	\item
-r to r (0.00)  
-r to s (5.00)  r->s  5.00   
-r to t (3.00)  r->t  3.00   
-r to x (10.00)  r->t  3.00   t->x  7.00   
-r to y (7.00)  r->t  3.00   t->y  4.00   
-r to z (5.00)  r->t  3.00   t->z  2.00
+r to r (0.00)  \\
+r to s (5.00)  r$\rightarrow$s  5.00   \\
+r to t (3.00)  r$\rightarrow$t  3.00   \\
+r to x (10.00)  r$\rightarrow$t  3.00   t$\rightarrow$x  7.00   \\
+r to y (7.00)  r$\rightarrow$t  3.00   t$\rightarrow$y  4.00   \\
+r to z (5.00)  r$\rightarrow$t  3.00   t$\rightarrow$z  2.00
 
 %Q14
 	\item
@@ -290,9 +299,12 @@ of          the         to          to          time        to
 \end{Verbatim}
 	\end{enumerate}
 	
+\newpage
+
 %Q15
 	\item $~$\\
-%\includegraphics[scale=0.75]{Q15}
+\includegraphics[scale=0.65]{Q15a} \\
+\includegraphics[scale=0.4]{Q15b} \\
 
 %Q16
 	\item 
@@ -363,7 +375,9 @@ code 4: ADDDD
 
 %Q20
 	\item  $~$\\
-%\includegraphics[scale=0.75]{Q20}
+\includegraphics[scale=0.40]{Q20a} \\
+\includegraphics[scale=0.42]{Q20b} \\
+\includegraphics[scale=0.42]{Q20c} \\
 Bits required: 93 + 142 + 8 = 243
 
 %Q21
